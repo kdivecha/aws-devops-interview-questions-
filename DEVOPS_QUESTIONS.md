@@ -8,8 +8,9 @@
 **Explanation:** CI focuses on correctness early; delivery/deployment focuses on safe, repeatable releases.  
 
 **Q67.** Why can trunk-based development improve CI outcomes compared to long-lived branches?
-**Answer:** It reduces merge conflicts and shortens feedback loops.
-**Explanation:** Smaller, more frequent changes make failures easier to isolate and fix.
+
+**Answer:** It reduces merge conflicts and shortens feedback loops.  
+**Explanation:** Smaller, more frequent changes make failures easier to isolate and fix.  
 
 **Q68.** How do you structure CI pipeline stages and artifacts?
 **Answer:** Build and test first, then produce versioned artifacts, and finally deploy/promote those artifacts.
