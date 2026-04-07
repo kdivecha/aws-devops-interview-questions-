@@ -2,9 +2,9 @@
 
 ## CI/CD & GitOps (66-77)
 
-**Q66.** What is CI/CD, and how does continuous integration differ from delivery/deployment?
-**Answer:** CI automates building/testing on code changes; delivery/deployment automates releasing to environments.
-**Explanation:** CI focuses on correctness early; delivery/deployment focuses on safe, repeatable releases.
+**Q66.** What is CI/CD, and how does continuous integration differ from delivery/deployment?  
+**Answer:** CI automates building/testing on code changes; delivery/deployment automates releasing to environments.  
+**Explanation:** CI focuses on correctness early; delivery/deployment focuses on safe, repeatable releases.  
 
 **Q67.** Why can trunk-based development improve CI outcomes compared to long-lived branches?
 **Answer:** It reduces merge conflicts and shortens feedback loops.
