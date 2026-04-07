@@ -3,6 +3,7 @@
 ## CI/CD & GitOps (66-77)
 
 **Q66.** What is CI/CD, and how does continuous integration differ from delivery/deployment?  
+
 **Answer:** CI automates building/testing on code changes; delivery/deployment automates releasing to environments.  
 **Explanation:** CI focuses on correctness early; delivery/deployment focuses on safe, repeatable releases.  
 
