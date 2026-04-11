@@ -72,7 +72,7 @@
 **Q14.** NAT Gateway vs NAT instance: what is the typical guidance?
 
 **Answer:** Prefer NAT Gateways for managed reliability; NAT instances are more customizable but operationally heavier.  
-**Explanation:** NAT Gateways are highly available and reduce the need to manage patching and scaling.  
+**Explanation:** NAT Gateways are managed and resilient within an AZ; for true multi-AZ resilience you deploy one NAT Gateway per AZ and route private subnets accordingly.  
 
 **Q15.** How do security group rules handle ephemeral ports?
 
@@ -185,8 +185,8 @@
 
 **Q36.** What are common S3 storage classes and how do they differ?
 
-**Answer:** Classes trade off cost vs retrieval frequency/latency.  
-**Explanation:** Standard is general-purpose; Infrequent Access saves cost for rare access; Glacier optimizes for archival durability and lower retrieval frequency.  
+**Answer:** S3 storage classes trade off cost, access frequency, and retrieval latency (for example: Standard, Standard-IA, One Zone-IA, Intelligent-Tiering, Glacier classes).  
+**Explanation:** Frequently accessed data usually stays in Standard/Intelligent-Tiering, while colder archival data moves to Glacier classes with slower or cost-tiered retrieval.  
 
 **Q37.** How would you describe S3 object consistency for reads after writes?
 
@@ -242,8 +242,8 @@
 
 **Q47.** What does Multi-AZ for RDS provide?
 
-**Answer:** Failover to a standby instance in another AZ.  
-**Explanation:** Typically improves availability by keeping a synchronized or readily available replica.  
+**Answer:** High availability via automatic failover to a standby in another AZ.  
+**Explanation:** Multi-AZ is primarily for availability and durability (not read scaling); traditional standby instances are not used for normal read traffic.  
 
 **Q48.** What are read replicas used for?
 
@@ -299,7 +299,7 @@
 
 **Q58.** API Gateway vs ALB for routing to Lambda: what differs?
 
-**Answer:** API Gateway is purpose-built for API traffic and can integrate tightly with Lambda; ALB routes HTTP at L7 but typically uses target groups.  
+**Answer:** API Gateway is purpose-built for API features and integrates with Lambda; ALB is L7 load balancing and can also invoke Lambda targets.  
 **Explanation:** The choice depends on API features (auth, throttling, WebSockets) and architecture constraints.  
 
 **Q59.** Why does Lambda in a VPC affect cold start?

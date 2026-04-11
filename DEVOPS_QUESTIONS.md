@@ -96,8 +96,8 @@
 
 **Q84.** How do you handle sensitive values/outputs in Terraform?
 
-**Answer:** Mark variables/outputs as `sensitive` and ensure they are not logged.  
-**Explanation:** Sensitive values still flow through Terraform, but should be protected from UI/log exposure.  
+**Answer:** Mark variables/outputs as `sensitive`, avoid exposing them in logs/outputs, and secure/encrypt remote state.  
+**Explanation:** `sensitive` only redacts display in many contexts; secrets can still exist in state, so backend encryption and tight access control are essential.  
 
 **Q85.** What are Terraform modules, and why use them?
 
@@ -158,7 +158,7 @@
 
 **Q96.** What are resource requests and limits, and how do they affect QoS?
 
-**Answer:** Requests reserve scheduling resources; limits cap runtime usage and determine QoS class (Guaranteed/Burstable).  
+**Answer:** Requests drive scheduling guarantees; limits cap runtime usage and influence QoS classes (Guaranteed, Burstable, BestEffort).  
 **Explanation:** Correct requests improve bin packing and reduce noisy-neighbor issues.  
 
 **Q97.** Readiness vs liveness probes.
